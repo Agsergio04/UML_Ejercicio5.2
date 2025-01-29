@@ -1,0 +1,27 @@
+a) Conceptos UML vs POO
+Clases ↔ Cliente, Pedido, Producto.
+Herencia ↔ MetodoPago y sus subtipos.
+Agregación ↔ Cliente → Pedido.
+Composición ↔ Pedido → Producto.
+Enums ↔ EstadoPedido, MetodoPago.
+
+b) Herramienta usada
+Herramienta: PlantUML.
+Razón: Es fácil de usar con sintaxis de texto, ideal para versionar en repositorios. Comparado con draw.io, no requiere interfaz gráfica.
+
+c) Conversión UML → Código
+Clases a código:
+
+Atributos privados se traducen a val/var en Kotlin.
+Métodos como calcularTotal() se implementan con lógica directa.
+
+Relaciones:
+Agregación: Cliente tiene una lista de Pedido (MutableList<Pedido>).
+Herencia: MetodoPago se modela como enum class.
+
+Enums:
+enum class EstadoPedido { ... }
+Funcionalidades clave:
+
+verificarStock(): Retorna true si hay stock para todos los productos.
+agregarPago(): Actualiza la lista de pagos del pedido.
